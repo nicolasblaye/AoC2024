@@ -13,4 +13,14 @@ for line in input_data:
 list_1.sort()
 list_2.sort()
 
-print(sum(map(lambda x: abs(x[0] - x[1]), zip(list_1, list_2))))
+result = 0
+for i in list_1:
+    occurence = 0
+    for j in list_2:
+        if i == j:
+            occurence +=1
+        if i < j:
+            break
+    result += i * occurence
+
+print(result)
